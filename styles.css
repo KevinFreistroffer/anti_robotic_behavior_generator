@@ -1,0 +1,35 @@
+.alarm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-width: 320px;
+}
+
+.alarm form {
+  width: 90%;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  color: #ddd;
+  display: none;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  margin: 1rem auto;
+}
