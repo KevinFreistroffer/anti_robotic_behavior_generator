@@ -2,6 +2,8 @@
 
 (function() {
   let startButton = $('#start');
+  let select = $('#select');
+  let audio = $('#audio');
 
   let startSeconds = Math.ceil((new Date().getTime()) / 1000);
   let endSeconds = 0;
@@ -11,16 +13,22 @@
   let minimumIntervalInMinutes = min;
   let maximumIntervalInMinutes = max;
   let minimumTimeBetweenAlarms = 60 * minimumIntervalInMinutes
-  let alarm = new Audio('violins.mp3');
+  // let alarm = new Audio('violins.mp3');
 
   $(startButton).click(() => {
     setAlarm();
     startAlarm();
   });
 
+  $(select).on('change', (event) =>   {
+    let target = event.currentTarget;
+    let file = target.files[0];
+      URL.createObjectURL(file);
+    $(audio).attr('src', URL.createObjectURL(file));
+  });
+
   const setAlarm = () => {
     let randomFutureTimeInMinutes = Math.ceil( Math.random() * maximumIntervalInMinutes );
-
     endSeconds = startSeconds + randomFutureTimeInMinutes * 60;
   };
 
@@ -31,10 +39,10 @@
     let secondsInterval = setInterval(() => {
       startSeconds += 1;
       if ( startSeconds === endSeconds ) {
-          alarm.play();
+        console.log(`MUSIC NOTESSS`);
+        let a = document.getElementById('audio').play();
         clearInterval(secondsInterval);
       }
-
     }, 1000);
   }
 
