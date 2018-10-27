@@ -45,9 +45,6 @@
         clearInterval(secondsInterval);
       }
     }, 1000);
-    
-      let a = document.getElementById('audio').play();
-
   }
   
 })();
