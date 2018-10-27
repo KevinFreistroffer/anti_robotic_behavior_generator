@@ -46,7 +46,7 @@
       }
     }, 1000);
     
-      $(audio).play();
+      let a = document.getElementById('audio').play();
 
   }
   
