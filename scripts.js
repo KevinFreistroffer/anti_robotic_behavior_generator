@@ -24,8 +24,13 @@
     let target = event.currentTarget;
     let file = target.files[0];
       URL.createObjectURL(file);
-    //$(audio).attr('src', URL.createObjectURL(file));
-    $(audio).attr('src', './violins.mp3');
+    
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $(audio).attr('src', './violins.mp3');
+      } else {
+        $(audio).attr('src', URL.createObjectURL(file));
+      }
+      
   });
 
   const setAlarm = () => {
@@ -40,7 +45,7 @@
     let secondsInterval = setInterval(() => {
       startSeconds += 1;
       if ( startSeconds === endSeconds ) {
-        console.log(`MUSIC NOTESSS`);
+        console.log(`MUSIC NOTESSS`);    
         let a = document.getElementById('audio').play();
         clearInterval(secondsInterval);
       }
