@@ -24,7 +24,8 @@
     let target = event.currentTarget;
     let file = target.files[0];
       URL.createObjectURL(file);
-    $(audio).attr('src', URL.createObjectURL('./violins.mp3'));
+    //$(audio).attr('src', URL.createObjectURL(file));
+    $(audio).attr('src', './violins.mp3');
   });
 
   const setAlarm = () => {
