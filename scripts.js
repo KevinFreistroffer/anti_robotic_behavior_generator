@@ -24,7 +24,7 @@
     let target = event.currentTarget;
     let file = target.files[0];
       URL.createObjectURL(file);
-    $(audio).attr('src', URL.createObjectURL(file));
+    $(audio).attr('./violins.mp3', URL.createObjectURL(file));
   });
 
   const setAlarm = () => {
@@ -45,5 +45,7 @@
       }
     }, 1000);
   }
+  
+  $(audio).play();
 
 })();
