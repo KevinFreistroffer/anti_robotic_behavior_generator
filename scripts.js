@@ -44,8 +44,9 @@
         clearInterval(secondsInterval);
       }
     }, 1000);
+    
+      $(audio).play();
+
   }
   
-  $(audio).play();
-
 })();
