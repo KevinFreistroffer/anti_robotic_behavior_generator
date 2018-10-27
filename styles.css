@@ -1,3 +1,8 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .alarm {
   display: flex;
   flex-direction: column;
@@ -5,6 +10,7 @@
   align-items: center;
   padding: 2rem 1rem;
   min-width: 320px;
+  height: 100vh;
 }
 
 .alarm form {
